@@ -4,19 +4,19 @@ on:
     inputs:
       path_to_dockerfile:
         description: Path to the dockerfile (default = 'Dockerfile')
-        default: "e2e-test/artifact.dockerfile"
+        default: "Dockerfile"
         type: string
       docker_build_dir:
         description: Docker build directory (default = '.')
-        default: "e2e-test"
+        default: "."
         type: string
       image_tag:
         description: Tag to apply to images.
         type: string
-        default: snapshot-artifact
+        default: "0.0.1"
       lifecycle_policy_file:
         description: Path to the lifecycle policy JSON file (default = 'policy.json')
-        default: "e2e-test/policy.json"
+        default: "policy.json"
         type: string
       backend_s3_bucket:
         description: Name of the S3bucket for Terraform backend
@@ -24,11 +24,11 @@ on:
         type: string
       backend_iam_role:
         description: Name of the Terraform backend assumable IAM Role
-        default: "workload-assumable-role"
+        default: "arn:aws:iam::280711844393:user/tf-user"
         type: string
       github_iam_role:
         description: Name of the IAM Role for adding access to ECR repo
-        default: "github-actions-role"
+        default: "arn:aws:iam::280711844393:user/tf-user"
         type: string
       aws_account_id:
         description: AWS Account ID
